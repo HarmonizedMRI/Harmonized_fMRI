@@ -8,11 +8,16 @@ kspace_delay = -1.5;
 % echo readout gradient waveform file
 readout_trajectory_file = 'readout_Jan2024.mod';
 
-% ScanArchive data file names
-datafile_ghostcal = '/export/jfnielse/tmp/4Yongli/20240227jondev_14114/scanarchive/Series4/ScanArchive_UM750MR_20240227_140830924.h5';
-datafile_mb1 = '/export/jfnielse/tmp/4Yongli/20240227jondev_14114/scanarchive/Series5/ScanArchive_UM750MR_20240227_140844718.h5';
-datafile_rest = '/export/jfnielse/tmp/4Yongli/20240227jondev_14114/scanarchive/Series6/ScanArchive_UM750MR_20240227_140930198.h5';  % beta on
-datafile_rest = '/export/jfnielse/tmp/4Yongli/20240227jondev_14114/scanarchive/Series7/ScanArchive_UM750MR_20240227_141621177.h5';  % beta off
+% ScanArchive data files:
+
+% receive gain calibration and odd/even ghost correction
+datafile_ghostcal = '/mnt/storage/jfnielse/HarmonizedMRI/examples/1/ScanArchive_UM750MR_20240227_140830924.h5';
+
+% 2d multislice reference scan for slice GRAPPA recon ('ACS' data)
+datafile_mb1 = '/mnt/storage/jfnielse/HarmonizedMRI/examples/1/ScanArchive_UM750MR_20240227_140844718.h5';
+
+% 5-min resting-state run
+datafile_rest = '/mnt/storage/jfnielse/HarmonizedMRI/examples/1/ScanArchive_UM750MR_20240227_141621177.h5';
 
 set_common_parameters;   % in ../../recon/
 

@@ -16,23 +16,15 @@ D = readraw(datafile_ghostcal, scanner);
 hmriutils.epi.io.draw2hdf(D, etl, np, 'ghostcal.h5');
 get_ghost_calibration_data;  
 
-% Get slice GRAPPA calibration data (dcal)
+% Get slice-GRAPPA calibration data (dcal)
 D = readraw(datafile_mb1, scanner);
 hmriutils.epi.io.draw2hdf(D, etl, np*mb, 'mb1.h5');
 get_acs_data;
 
-% Load and reconstruct fMRI resting run
+% Load and reconstruct fMRI resting run.
 D = readraw(datafile_rest, scanner);
-fn = 'rest.h5';   % used by recon_timeseries.m as well
+fn = 'rest.h5';   % 'fn' is used by recon_timeseries.m as well
 hmriutils.epi.io.draw2hdf(D, etl, np, fn, 'maxFramesPerFile', 50);
 nFrames = 392;
 recon_timeseries;
 
-% Load and reconstruct fMRI task run(s)
-for ii = 1:length(datafile_task)
-    D = readraw(datafile_task{ii}, scanner);
-    fn = sprintf('task_%d.h5', ii);
-    hmriutils.epi.io.draw2hdf(D, etl, np, fn, 'maxFramesPerFile', 50);
-    nFrames = 264;
-    recon_timeseries;
-end
