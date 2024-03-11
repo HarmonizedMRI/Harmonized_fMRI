@@ -10,9 +10,6 @@ set_experimental_parameters_ge;
 % remove existing local .h5 and .mat files
 % rm ghostcal*.h5 mb1*.h5 rest*.h5 task*.h5 *.mat
 
-% B0 map
-get_b0;
-
 % EPI ghost calibration. Saves linear ghost correction parameters in a.mat
 % If you observe phase wraps in plots, change 'del' in set_experimental_params.m
 D = readraw(datafile_ghostcal, scanner);
