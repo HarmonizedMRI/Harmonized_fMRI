@@ -10,18 +10,22 @@ set_experimental_parameters_ge;
 % remove existing local .h5 and .mat files
 % rm ghostcal*.h5 mb1*.h5 rest*.h5 task*.h5 *.mat
 
-% EPI ghost calibration. Saves linear ghost correction parameters in a.mat
-% If you observe phase wraps in plots, change 'del' in set_experimental_params.m
+% EPI ghost calibration. Saves linear ghost correction parameters in a.mat.
+% If you observe phase wraps in plots, change 'del' in set_experimental_params.m.
+% This will be automated in a future release.
 D = readraw(datafile_ghostcal, scanner);
 hmriutils.epi.io.draw2hdf(D, etl, np, 'ghostcal.h5');
 get_ghost_calibration_data;  
+save a a
 
-% Get slice-GRAPPA calibration data (dcal)
+% Get slice-GRAPPA calibration data (dcal).
+% Load data from ScanArchive file, or load 'dcal' array already created for you
 D = readraw(datafile_mb1, scanner);
 hmriutils.epi.io.draw2hdf(D, etl, np*mb, 'mb1.h5');
 get_acs_data;
+save('dcal.mat', 'dcal', '-v7.3');
 
-% Load and reconstruct fMRI resting run.
+% Load and reconstruct a few frames from the resting-state run
 D = readraw(datafile_rest, scanner);
 fn = 'rest.h5';   % 'fn' is used by recon_timeseries.m as well
 hmriutils.epi.io.draw2hdf(D, etl, np, fn, 'maxFramesPerFile', 50);
