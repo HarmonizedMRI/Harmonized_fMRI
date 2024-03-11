@@ -73,7 +73,7 @@ for ifr = (nFramesDiscard+1):nFrames
     end
 end
 
-% save to .mat file in current directory
+% save to .mat and nifti files in current directory
 %save([output_dir session_name '/' fn '.mat'], 'Irss', '-v7.3')
 if strcmp(scanner, 'Siemens')
     Irss = flipdim(Irss,2);

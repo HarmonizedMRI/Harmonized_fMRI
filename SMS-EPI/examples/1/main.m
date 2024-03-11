@@ -25,6 +25,6 @@ get_acs_data;
 D = readraw(datafile_rest, scanner);
 fn = 'rest.h5';   % 'fn' is used by recon_timeseries.m as well
 hmriutils.epi.io.draw2hdf(D, etl, np, fn, 'maxFramesPerFile', 50);
-nFrames = 392;
+nFrames = 10;  %  number of frames to reconstruct (out of 392)
 recon_timeseries;
 

@@ -1,10 +1,10 @@
 %% Get MATLAB toolboxes
 
 % Read Siemens .dat files
-addpath ~/github/jfnielsen/scanLog/SiemensRead/
+% addpath ~/github/jfnielsen/scanLog/SiemensRead/
  
 % toolbox for loading GE raw files
-addpath ~/Programs/orchestra-sdk-2.1-1.matlab/
+% addpath ~/Programs/orchestra-sdk-2.1-1.matlab/
 
 % Pulseq (+mr namespace)
 system('git clone --branch v1.4.2 git@github.com:pulseq/pulseq.git');
