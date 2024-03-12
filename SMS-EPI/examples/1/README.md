@@ -26,9 +26,7 @@ The SMS-EPI fMRI sequence provided here matches the ABCD protocol
 SMS factor 6).
 
 
-## Quick demo
-
-### Requirements
+## Requirements
 
 **MATLAB** is required to run the code in this repository.
 
@@ -36,11 +34,12 @@ SMS factor 6).
 Alternatively, you can navigate to each repository and download the code as a ZIP file 
 (under the green "Code" button in each repository).
 
-### Step 1: Download the data files
+
+## Quick demo
+
+### Step 1: Download the data files to the current folder
 
 Download link: https://www.dropbox.com/scl/fo/vbc67ijm4lob38g91wrtb/h?rlkey=64juqy8xdu4a5xlt8uqykcw1h&dl=0
-
-Copy all files to the current folder.
 
 
 ### Step 2: Run `main1.m`
@@ -48,7 +47,6 @@ Copy all files to the current folder.
 This will:
    * Download the source code from Github
    * Load `a.mat` and `dcal.mat`
-   * Reconstruct the first 10 frames of `rest.h5` using slice GRAPPA
-
-SMS slice groups will be displayed as they are being reconstructed.
+   * Reconstruct the first 10 frames of `rest.h5` using slice GRAPPA.
+     SMS slice groups will be displayed as they are being reconstructed.
 
