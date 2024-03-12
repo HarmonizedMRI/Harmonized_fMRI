@@ -35,7 +35,15 @@ Alternatively, you can navigate to each repository and download the code as a ZI
 (under the green "Code" button in each repository).
 
 
-## Quick demo: reconstruction
+## Quick reconstruction demo
+
+
+### Step 0: Download this repository and enter the example directory
+
+```
+$ git clone git@github.com:HarmonizedMRI/Harmonized_fMRI.git
+$ cd Harmonized_fMRI/SMS-EPI/examples/1/
+```
 
 ### Step 1: Download the data files to the current folder
 
@@ -44,7 +52,18 @@ Download link: https://www.dropbox.com/scl/fo/vbc67ijm4lob38g91wrtb/h?rlkey=64ju
 
 ### Step 2: Run `main1.m`
 
+In MATLAB:
+```
+>> main1;
+```
+
+From the Linux command line:
+```
+$ matlab -nosplash -nodesktop -r "run('main1.m')"
+```
+
 This will:
+   * Add ../../recon/ to the MATLAB path
    * Download the source code from Github
    * Load `a.mat` and `dcal.mat`
    * Reconstruct the first 10 frames of `rest.h5` using slice GRAPPA.
