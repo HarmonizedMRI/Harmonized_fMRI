@@ -43,7 +43,12 @@ Download link: https://www.dropbox.com/scl/fo/vbc67ijm4lob38g91wrtb/h?rlkey=64ju
 Copy all files to the current folder.
 
 
-### Step 2: Run `main.m`
+### Step 2: Run `main1.m`
 
-This should display SMS slice groups as they are being reconstructed.
+This will:
+   * Download the source code from Github
+   * Load `a.mat` and `dcal.mat`
+   * Reconstruct the first 10 frames of `rest.h5` using slice GRAPPA
+
+SMS slice groups will be displayed as they are being reconstructed.
 
