@@ -25,9 +25,10 @@ The SMS-EPI fMRI sequence provided here matches the ABCD protocol
 (2.4 mm isotropic resolution, 90x90x60 matrix size, 0.8s temporal resolution,
 SMS factor 6).
 
-The workflow involves the following steps:
 
-## Step 0: Requirements
+## Quick demo
+
+### Requirements
 
 **MATLAB** is required to run the code in this repository.
 
@@ -35,67 +36,14 @@ The workflow involves the following steps:
 Alternatively, you can navigate to each repository and download the code as a ZIP file 
 (under the green "Code" button in each repository).
 
-## Step 1: Installation
+### Step 1: Download the data files
 
-The code in this repository can be
-downloaded using the following `git clone` command 
-from, e.g., a Linux shell or a Git Bash shell in Windows:
-```
-git clone --branch develop git@github.com:HarmonizedMRI/SMS-EPI.git
-```
+Download link: https://www.dropbox.com/scl/fo/vbc67ijm4lob38g91wrtb/h?rlkey=64juqy8xdu4a5xlt8uqykcw1h&dl=0
 
-In addition, the code dependencies must be downloaded:
-```
-git clone git@github.com:pulseq/pulseq.git
-git clone --branch develop git@github.com:HarmonizedMRI/utils.git
-git clone --branch develop git@github.com:HarmonizedMRI/PulCeq.git
-git clone --branch develop git@github.com:toppeMRI/toppe.git
-git clone git@github.com:JeffFessler/mirt.git
-```
-followed by the corresponding `addpath` commands in MATLAB:
-```
-addpath pulseq/matlab      % Pulseq (+mr namespace)
-addpath utils              % +hmriutils namespace 
-addpath PulCeq/matlab      % only needed if converting to GE scan files
-addpath toppe              % only needed if converting to GE scan files
-cd mirt; setup; cd ..;     % 'im' function for display
-```
+Copy all files to the current folder.
 
-**Linux users** can run `get_code_and_set_paths.m` 
-to perform these actions entirely from within the MATLAB prompt, e.g.:
-```
->> system('git clone --branch develop git@github.com:HarmonizedMRI/SMS-EPI.git');
->> cd SMS-EPI/example
->> get_code_and_set_paths;
-```
 
-**Windows users**: for instructions on how to do `git clone` in Windows, 
-see [this video](https://www.youtube.com/watch?v=Av7lcVIbEBY&t=1s).
+### Step 2: Run `main.m`
 
-## Step 2: Set acquisition and other experimental parameters
-You may edit the file `set_experimental_params.m` to set things like
-spatial resolution and the name and  location of your acquired data files.
-However, when first testing this code, we recommend that you leave the acquisition
-parameters as they are. Then execute it:
-```
->> set_experimental_params;
-```
-
-## Step 3: Reconstruct time-series images
-Place the acquired data files in the folder specified
-in `set_experimental_params.m`. 
-Then execute the following MATLAB commands:
-```
-set_experimental_params;       % get experimental parameters
-get_ghost_calibration_data;    % get EPI ghost calibration data 
-get_acs_data;                  % get individual slice (ACS) data for slice GRAPPA
-recon_timeseries;              % do slice GRAPPA reconstruction
-```
-
-## Example data 
-
-https://www.dropbox.com/scl/fo/vbc67ijm4lob38g91wrtb/h?rlkey=64juqy8xdu4a5xlt8uqykcw1h&dl=0
-
-Example phantom data will be posted here soon.
-
+This should display SMS slice groups as they are being reconstructed.
 
