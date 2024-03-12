@@ -1,7 +1,7 @@
-# A complete SMS-EPI example: from acquisition to image reconstruction
+# SMS-EPI reconstruction example
 
 This folder contains MATLAB code that implements 
-a complete vendor-agnostic workflow for acquiring and reconstructing
+a complete vendor-agnostic workflow for reconstructing
 SMS-EPI data for functional MRI.
 
 The specific workflow implementation provided here is 
@@ -35,7 +35,7 @@ Alternatively, you can navigate to each repository and download the code as a ZI
 (under the green "Code" button in each repository).
 
 
-## Quick demo
+## Quick demo: reconstruction
 
 ### Step 1: Download the data files to the current folder
 
