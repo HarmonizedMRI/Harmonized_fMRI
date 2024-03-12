@@ -38,19 +38,19 @@ Alternatively, you can navigate to each repository and download the code as a ZI
 ## Quick reconstruction demo
 
 
-### Step 0: Download this repository and enter the example directory
+### Step 1: Download this repository and enter the example directory
 
 ```
 $ git clone git@github.com:HarmonizedMRI/Harmonized_fMRI.git
 $ cd Harmonized_fMRI/SMS-EPI/examples/1/
 ```
 
-### Step 1: Download the data files to the current folder
+### Step 2: Download the example data files to the current folder
 
-Download link: https://www.dropbox.com/scl/fo/vbc67ijm4lob38g91wrtb/h?rlkey=64juqy8xdu4a5xlt8uqykcw1h&dl=0
+Download link: https://www.dropbox.com/scl/fo/d1a39lkec7ilgp654pkui/h?rlkey=5als4glw6pci5qvxwb72tu7u2&dl=0
 
 
-### Step 2: Run `main1.m`
+### Step 3: Run `main1.m`
 
 In MATLAB:
 ```
